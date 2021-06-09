@@ -66,7 +66,6 @@ class MovieFragment : Fragment(), AdapterMovieViewHolder.ModelAdapterOnclicListe
         model.movieFromServer.observe(viewLifecycleOwner, Observer {
             if (it != null) {
                 adapter.updatelist(it)
-                Toast.makeText(requireContext(), "" + it.size, Toast.LENGTH_SHORT).show()
             }
         })
         movieModel.networksState.observe(viewLifecycleOwner, Observer {

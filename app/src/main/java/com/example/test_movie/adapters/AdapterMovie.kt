@@ -7,7 +7,8 @@ import com.example.test_movie.databinding.ItemMovieBinding
 import com.example.test_movie.pojos.Results
 import com.squareup.picasso.Picasso
 
-class AdapterMovie(var listPost: ArrayList<Results>,
+class AdapterMovie(
+    var listPost: ArrayList<Results>,
     private val onclicListenerHelper: AdapterMovieViewHolder.ModelAdapterOnclicListenerHelper
 ) : RecyclerView.Adapter<AdapterMovieViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdapterMovieViewHolder {
@@ -32,7 +33,7 @@ class AdapterMovie(var listPost: ArrayList<Results>,
     }
 }
 
-class AdapterMovieViewHolder private constructor(var binding:ItemMovieBinding) :
+class AdapterMovieViewHolder private constructor(var binding: ItemMovieBinding) :
     RecyclerView.ViewHolder(binding.root) {
     companion object {
         fun from(parent: ViewGroup): AdapterMovieViewHolder {
@@ -45,24 +46,26 @@ class AdapterMovieViewHolder private constructor(var binding:ItemMovieBinding) :
     }
 
     fun bind(itemParam: Results) {
-        if(itemParam.title!=null) {
+        if (itemParam.title != null) {
             binding.nombre.text = itemParam.title
-        }else{
+        } else {
             binding.nombre.text = "Sin Nombre"
         }
-        if(itemParam.vote_average!=null){
-            binding.calificacion.text= itemParam.vote_average.toString()
-        }else{
-            binding.calificacion.text= "Sin Calificación"
+        if (itemParam.vote_average != null) {
+            binding.calificacion.text = itemParam.vote_average.toString()
+        } else {
+            binding.calificacion.text = "Sin Calificación"
         }
         if (itemParam.backdrop_path != null) {
-            Picasso.get().load("https://www.themoviedb.org/t/p/w600_and_h900_bestv2"+itemParam.backdrop_path)
+            Picasso.get()
+                .load("https://www.themoviedb.org/t/p/w600_and_h900_bestv2" + itemParam.backdrop_path)
                 .into((binding.imageView))
         } else {
-            Picasso.get().load("https://bangbranding.com/blog/wp-content/uploads/2016/11/700x511_SliderInterior.jpg")
+            Picasso.get()
+                .load("https://bangbranding.com/blog/wp-content/uploads/2016/11/700x511_SliderInterior.jpg")
                 .into((binding.imageView))
-            binding.nombre.text=itemParam.title
-            binding.calificacion.text=itemParam.vote_average.toString()
+            binding.nombre.text = itemParam.title
+            binding.calificacion.text = itemParam.vote_average.toString()
         }
     }
 

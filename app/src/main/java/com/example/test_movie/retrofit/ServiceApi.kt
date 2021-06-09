@@ -17,7 +17,8 @@ class ServiceApi {
         return getClient()!!.create(
             Api::class.java
         )
-}
+    }
+
     fun getClient(): Retrofit? {
         if (retrofit == null) {
             val interceptor = HttpLoggingInterceptor()

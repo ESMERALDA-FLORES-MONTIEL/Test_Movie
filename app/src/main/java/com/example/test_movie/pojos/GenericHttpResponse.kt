@@ -12,7 +12,7 @@ class GenericHttpResponse {
 }
 
 data class GenericResponse(
-    val status:Int,
+    val status: Int,
     val message: String
 )
 

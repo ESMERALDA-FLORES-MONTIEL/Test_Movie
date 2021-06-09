@@ -8,7 +8,7 @@
         android:id="@+id/movieFragment"
         android:name="com.example.test_movie.fragments.MovieFragment"
         android:label="fragment_movie2"
-        tools:layout="@layout/fragment_movie2" >
+        tools:layout="@layout/fragment_movie2">
         <action
             android:id="@+id/action_movieFragment_to_movieDetails"
             app:destination="@id/movieDetails" />
@@ -17,11 +17,11 @@
         android:id="@+id/movieDetails"
         android:name="com.example.test_movie.fragments.MovieDetails"
         android:label="fragment_movie_details"
-        tools:layout="@layout/fragment_movie_details" >
+        tools:layout="@layout/fragment_movie_details">
         <argument
             android:name="movie"
-            app:argType="com.example.test_movie.pojos.Results"
             android:defaultValue="@null"
+            app:argType="com.example.test_movie.pojos.Results"
             app:nullable="true" />
         <action
             android:id="@+id/action_movieDetails_to_movieFragment"

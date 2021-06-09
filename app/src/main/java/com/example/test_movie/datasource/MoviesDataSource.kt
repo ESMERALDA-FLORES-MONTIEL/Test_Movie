@@ -10,7 +10,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MoviesDataSource (private val api: Api) {
+class MoviesDataSource(private val api: Api) {
     val movieNetworksState = MutableLiveData<NetworkState>()
     val movieBadResponse = MutableLiveData<GenericResponse>()
     val movieInfoSuccessResponse = MutableLiveData<InfoMoviesResponse>()
@@ -25,8 +25,8 @@ class MoviesDataSource (private val api: Api) {
                 ) {
                     if (response.isSuccessful) {
                         val gson = Gson()
-                        if (response.body()!!.page==GenericHttpResponse.STATUS_OK) { //Aqui condicionamos si mi page es 1 (Que es el valor del parametro que me devuelve),
-                                                                                    // mi llamada será satisfactoria
+                        if (response.body()!!.page == GenericHttpResponse.STATUS_OK) { //Aqui condicionamos si mi page es 1 (Que es el valor del parametro que me devuelve),
+                            // mi llamada será satisfactoria
                             movieNetworksState.postValue(NetworkState.LOADED)
                             movieInfoSuccessResponse.postValue(response.body())
                         } else {
@@ -40,6 +40,7 @@ class MoviesDataSource (private val api: Api) {
                         }
                     }
                 }
+
                 override fun onFailure(call: Call<InfoMoviesResponse>, t: Throwable) {
                     movieNetworksState.value = NetworkState.ERROR
                 }

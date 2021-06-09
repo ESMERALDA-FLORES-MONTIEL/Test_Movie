@@ -9,7 +9,7 @@ import com.example.test_movie.pojos.InfoMoviesResponse
 import com.example.test_movie.pojos.Results
 import com.example.test_movie.repository.Repository
 
-class MovieViewModel(private val repository: Repository):ViewModel() {
+class MovieViewModel(private val repository: Repository) : ViewModel() {
     private var movieDataSource: MoviesDataSource =
         repository.requestInfoMoviesDataSource()
     var networksState: MutableLiveData<NetworkState>

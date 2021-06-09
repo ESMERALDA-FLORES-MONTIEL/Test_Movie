@@ -1,7 +1,7 @@
 package com.example.test_movie
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.test_movie.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

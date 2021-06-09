@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Test_Movie</string>
+    <string name="MOVIES">Películas Mejor Evaluadas</string>
+    <string name="title">Título de Película</string>
+    <string name="calificacion"> Calificación</string>
+    <string name="estreno">Fecha de estreno</string>
+    <string name="Sinopsis">Sinopsis</string>
 </resources>
